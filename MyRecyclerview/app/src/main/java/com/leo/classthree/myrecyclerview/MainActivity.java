@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         UserModel user1 = new UserModel("One","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV0I6VDKQ3vmT9y2QFvx7UZ4aTK_HZUbbHyIvmr_sgoa3sIBB6cg",
                 "https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg");
+        user1.setUsername("Leon");
 
         datalist.add(user1);
 

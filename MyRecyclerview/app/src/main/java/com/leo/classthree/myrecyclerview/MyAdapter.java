@@ -1,6 +1,7 @@
 package com.leo.classthree.myrecyclerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,10 +54,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewholder> {
                 .load(bodyImageUrl)
                 .centerCrop()
                 .into(holder.body_image);
+
+
         holder.like_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "clicked: "+String.valueOf(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Sobuj clicked button number : "+String.valueOf(position+1), Toast.LENGTH_SHORT).show();
+                //intent pass
             }
         });
 
@@ -83,5 +87,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewholder> {
             like_btn = itemView.findViewById(R.id.button);
 
         }
+
     }
 }
