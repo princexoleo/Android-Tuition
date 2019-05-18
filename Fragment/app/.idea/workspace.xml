@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d066123d-39ea-4a59-bd6f-2298c4a3f42f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/java/com/leo/classfive/myapplication/CustomAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/java/com/leo/classfive/myapplication/DataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/java/com/leo/classfive/myapplication/ViewHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/res/drawable/ic_adb_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/res/layout/item_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CustomListView/app/src/main/java/com/leo/classfive/myapplication/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/java/com/leo/classfive/myapplication/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CustomListView/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CustomListView/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +28,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-96" />
-    <option name="y" value="18" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -205,6 +212,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32975295" />
