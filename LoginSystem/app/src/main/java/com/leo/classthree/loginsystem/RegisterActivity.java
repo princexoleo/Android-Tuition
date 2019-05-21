@@ -70,5 +70,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }else{
             Toast.makeText(this, "Empty not allowed", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
+
+
+
+
+
     }
 }

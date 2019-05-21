@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = userNameET.getText().toString();
-                String pass = userNameET.getText().toString();
+                String pass = userPassEt.getText().toString();
 
                 SharedPreferences preferences = getSharedPreferences("user_box", MODE_PRIVATE);
                String prefUsername = preferences.getString("username", "");
