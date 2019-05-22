@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
     EditText usernameET, passET, emailET, phoneET;
     Button regButton;
-    MyDatabase db =new MyDatabase(getApplicationContext());
+    MyDatabase saveIntoDatabase;
+
 
 
 
@@ -18,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        saveIntoDatabase = new MyDatabase(getApplicationContext());
 
         usernameET = findViewById(R.id.username_et);
         passET = findViewById(R.id.pass_et);
@@ -46,6 +49,12 @@ public class RegisterActivity extends AppCompatActivity {
                  //check if any body empty or not
 
         //now store information into database..
+        if(saveIntoDatabase.insertData(userName,pass,email,phone)){
+            Toast.makeText(this, "Data insert successfull", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Data insert Failed!!", Toast.LENGTH_SHORT).show();
+        }
+
 
 
 
