@@ -1,6 +1,8 @@
 package com.leo.classseven.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText usernameET, passET, emailET, phoneET;
     Button regButton;
-    MyDatabase saveIntoDatabase;
+    public  static MyDatabase saveIntoDatabase;
 
 
 
@@ -20,7 +22,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        saveIntoDatabase = new MyDatabase(getApplicationContext());
+
+        saveIntoDatabase = new MyDatabase(this);
 
         usernameET = findViewById(R.id.username_et);
         passET = findViewById(R.id.pass_et);
@@ -51,6 +54,10 @@ public class RegisterActivity extends AppCompatActivity {
         //now store information into database..
         if(saveIntoDatabase.insertData(userName,pass,email,phone)){
             Toast.makeText(this, "Data insert successfull", Toast.LENGTH_SHORT).show();
+           // Intent goLogin = new Intent(RegisterActivity.this, MainActivity.class);
+            //startActivity(goLogin);
+           // finish();
+
         }else{
             Toast.makeText(this, "Data insert Failed!!", Toast.LENGTH_SHORT).show();
         }

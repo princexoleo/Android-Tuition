@@ -5,11 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 public class MyDatabase extends SQLiteOpenHelper {
+    private static final String TAG = "MyDatabase";
 
     public static final String DATABASE_NAME = "SabujDatabase.db";
     public static final String TABLE_NAME = "Users_Table";
@@ -33,10 +35,12 @@ public class MyDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // to create  database table.
        try{
-           String create_table ="CREATE TABLE "+TABLE_NAME+"("+ID_COL+"INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                   COL_1+" VARCHAR(255),"+COL_2+" VARCHAR(255), "+COL_3+" VARCHAR(255), "+COL_4+" VARCHAR(255));";
+           String create_table ="CREATE TABLE "+TABLE_NAME+
+                   "("+ID_COL+" INTEGER PRIMARY KEY ,"+
+                   COL_1+" TEXT,"+COL_2+" TEXT, "+COL_3+" TEXT, "+COL_4+" TEXT);";
 
            db.execSQL(create_table);
+           Log.i(TAG, "onCreate: created");
        }catch (Exception e )
        {
            Toast.makeText(context, "Expception"+e, Toast.LENGTH_SHORT).show();
@@ -67,20 +71,36 @@ public class MyDatabase extends SQLiteOpenHelper {
         conValue.put(COL_3, email);
         conValue.put(COL_4, phone);
 
-        long res;
+        sDB.insert(TABLE_NAME, null,conValue);
+        return true;
 
-        res = sDB.insert(TABLE_NAME, null,conValue);
 
-        if (res == -1){
-            return false;
-        }else{
-            return true;
-        }
     }
     public Cursor displayAllData()
     {
         SQLiteDatabase sqLiteDatabase=this.getReadableDatabase();
         Cursor cursor=sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
         return cursor;
+    }
+    public Cursor getData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME+" where user_id="+id+"", null );
+        return res;
+    }
+
+    public Cursor loginChecker(String name, String pass){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query ="SELECT * FROM "+TABLE_NAME+" WHERE username = "+name+" AND password ="+pass+" ";
+
+
+        String Q = "SELECT * FROM " + TABLE_NAME + " WHERE "
+                + COL_1 + " = " + name
+                + " AND " + COL_2 + " = " + pass;
+
+        Cursor cursor = db.rawQuery(Q,null);
+
+        return cursor;
+
     }
 }

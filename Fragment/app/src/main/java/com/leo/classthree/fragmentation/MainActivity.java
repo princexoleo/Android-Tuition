@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i(TAG, "onCreate: Activity");
 
+        fragmentC = new FragmentC();
         fragmentA = new FragmentA();
         fragmentB = new FragmentB();
-        fragmentC = new FragmentC();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        FragmentTransaction transaction =fragmentManager.beginTransaction();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
 
         transaction.replace(R.id.container, fragmentA);
         transaction.replace(R.id.container_two, fragmentB);

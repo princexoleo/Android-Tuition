@@ -31,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tablayout_id);
         viewPager = findViewById(R.id.viewpager_id);
         setUpViewPager(viewPager);
-
         tabLayout.setupWithViewPager(viewPager);
     }
 
     private void setUpViewPager(ViewPager viewPager) {
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new OneFragment(), "ONE");
+        FragmentManager fm = getSupportFragmentManager();
+        ViewPagerAdapter adapter = new ViewPagerAdapter(fm);
+        Fragment a = new OneFragment();
+        adapter.addFragment(a, "ONE");
         adapter.addFragment(new TwoFragment(), "TWO");
         adapter.addFragment(new ThreeFragment(), "Sobuj");
         viewPager.setAdapter(adapter);
