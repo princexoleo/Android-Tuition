@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar =findViewById(R.id.toolbar_id);
+
         setSupportActionBar(toolbar);
 
         tabLayout = findViewById(R.id.tablayout_id);
         viewPager = findViewById(R.id.viewpager_id);
+
         setUpViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
     }

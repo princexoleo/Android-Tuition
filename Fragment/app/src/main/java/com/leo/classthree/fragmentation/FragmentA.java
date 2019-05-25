@@ -20,7 +20,7 @@ import android.widget.Toast;
  */
 public class FragmentA extends Fragment {
     private static final String TAG = "FragmentA";
-    public static int press=0;
+
 
     Button btn;
 
@@ -35,17 +35,24 @@ public class FragmentA extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View frag_view = inflater.inflate(R.layout.fragment_a, container, false);
-        btn = frag_view.findViewById(R.id.button_a);
 
+
+        btn = frag_view.findViewById(R.id.button_a);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Fragment A Button CLiked", Toast.LENGTH_SHORT).show();
-                press =1;
+
             }
         });
+
+
+
         return frag_view;
     }
+
+
+
 
     @Override
     public void onStart() {

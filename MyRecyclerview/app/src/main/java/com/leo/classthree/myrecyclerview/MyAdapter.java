@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import androidbangladesh.bengali.support.BengaliUnicodeString;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewholder> {
 
     ArrayList<UserModel> list;
@@ -38,7 +40,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewholder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewholder holder, final int position) {
         String name = list.get(position).getUsername();
-        holder.username_tv.setText(name);
+        String text="নিশীথ রাতের নিশী তারা আমি,";
+        holder.username_tv.setText(text);
 
         String imgaeUrl = list.get(position).getUser_proImage();
 
